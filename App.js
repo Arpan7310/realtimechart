@@ -24,11 +24,11 @@ const [time,setTime]=useState([])
  }
 
 useEffect(()=>{
-  if(open){
+ 
     webSocket.onopen=function(event){
       webSocket.send(JSON.stringify(subscribe))
     }
-  }
+  
 },[])
 
 
@@ -52,9 +52,9 @@ useEffect(()=>{
       
        data.push(k) 
        setData(r)
-       console.log(data)
+       
 
-      if(data.length>9)
+      if(data.length>5)
       data.shift();
      
     return ()=> webSocket.close()
@@ -76,10 +76,10 @@ useEffect(()=>{
   
   let t=new Date(item.time).getHours() + ":"+
   new Date(item.time).getMinutes() + ":"+
-  new Date(item.time).getSeconds()+"s"
+  new Date(item.time).getSeconds()
 
   time.push(t)
-  if(time.length>9)
+  if(time.length>5)
   time.shift();
  })
 
@@ -91,12 +91,12 @@ useEffect(()=>{
        
          let t=parseFloat(item.price)
         price.push(t)
-        if(price.length>9)
+        if(price.length>5)
         price.shift();
         })
        
               }
- console.log(price)
+
   
   
 

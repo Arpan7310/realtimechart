@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "real time chart with the changing price key in api ",
+    "githubUrl": "https://github.com/Arpan7310/realtimechart"
   }
 }
